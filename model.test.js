@@ -18,6 +18,13 @@ describe('testing model class that has notes',() =>
     newNotes.addNote("Swimming")
     expect(newNotes.getNotes()).toEqual(["Swimming"])
   });
+  it('tests to see if reset method resets array so all notes are removed',() =>
+  {
+    newNotes = new notes()
+    newNotes.addNote("Swimming")
+    newNotes.reset()
+    expect(newNotes.getNotes()).toEqual([])
+  });
     
 
   

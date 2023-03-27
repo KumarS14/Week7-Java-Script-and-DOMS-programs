@@ -12,6 +12,12 @@ describe('testing model class that has notes',() =>
     newNotes.addNote("Swimming")
     expect(newNotes.notes).toEqual(["Swimming"])
   });
+  it('tests to see if getNotes method returns all notes',() =>
+  {
+    newNotes = new notes()
+    newNotes.addNote("Swimming")
+    expect(newNotes.getNotes()).toEqual(["Swimming"])
+  });
     
 
   

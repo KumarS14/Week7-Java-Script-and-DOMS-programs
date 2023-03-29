@@ -30,6 +30,15 @@ describe('Page view', () => {
 
     expect(document.querySelectorAll('p').length).toBe(0);
   });
+  describe('Page View', () => {
+    it('displays 2 notes', () => {
+      document.body.innerHTML = fs.readFileSync('./index.html');
+  
+      const viewNotes = new ViewNotes();
+  
+      expect(document.querySelectorAll('p').length).toBe(2);
+    });
+  });
  
 
 });

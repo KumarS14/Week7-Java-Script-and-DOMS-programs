@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+const { equal } = require('assert');
 const fs = require('fs');
 const View = require('./view');
 
@@ -21,5 +22,14 @@ describe('Page view', () => {
 
     expect(document.querySelectorAll('p').length).toBe(3);
   });
-  
+  it('clearParagraphs method should delete all paragraphs so length should be 0', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const view = new View();
+    view.clearParagraph()
+
+    expect(document.querySelectorAll('p').length).toBe(0);
+  });
+ 
+
 });

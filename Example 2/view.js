@@ -4,6 +4,13 @@ class View {
 
     console.log(this.mainContainerEl);
   }
+  addParagraph()
+  {
+    const newP = document.createElement('p')
+    newP.textContent = "This is what I made a minute ago"
+    const body = document.querySelector('body');
+    body.append(newP)
+  }
 }
 
 module.exports = View;

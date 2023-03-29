@@ -17,6 +17,10 @@
           const body = document.querySelector("body");
           body.append(newP);
         }
+        clearParagraph() {
+          const elementToRemove = document.querySelector("#main-container");
+          elementToRemove.remove();
+        }
       };
       module.exports = View2;
     }

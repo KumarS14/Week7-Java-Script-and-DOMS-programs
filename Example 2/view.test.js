@@ -5,7 +5,7 @@
 const { equal } = require('assert');
 const fs = require('fs');
 const View = require('./view');
-const ViewNotes = require('./view')
+const ViewNotes = require('./NotesView')
 
 describe('Page view', () => {
   it('displays 2 paragraphs', () => {
@@ -34,10 +34,10 @@ describe('Page view', () => {
   it('should retrive notes from notes class and call them in the view class using getNotes',() => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     const notes = new ViewNotes();
-    notes.addNote('Finish by 6')
-    const view = new View()
-    view.getNotes()
-    expect(document.querySelectorAll('div').length).toBe(1);
+    notes.addNoteTest("swimming")
+    const view = new View(notes.notes)
+ 
+    expect(view.getNotes()).toEqual(["swimming"]);
 
 
   });

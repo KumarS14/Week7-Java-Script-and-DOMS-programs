@@ -14,4 +14,12 @@ describe('Page View', () => {
       expect(viewNotes.notes).toEqual([])
       
     });
+    it('tests add note to return one note', () => {
+      
+  
+        const viewNotes = new ViewNotes();
+        viewNotes.addNote("go swimming")
+        expect(viewNotes.notes).toEqual(["go swimming"])
+        
+      });
   });

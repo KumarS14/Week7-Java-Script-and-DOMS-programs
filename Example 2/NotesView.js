@@ -5,7 +5,7 @@ class ViewNotes  {
     {
         this.notes = notes
     }
-    addNote(note)
+    addNoteTest(note)
     {
         this.notes.push(note)
     }

@@ -7,8 +7,9 @@
   var require_view = __commonJS({
     "view.js"(exports, module) {
       var View2 = class {
-        constructor() {
+        constructor(notes) {
           this.mainContainerEl = document.querySelector("#main-container");
+          this.notes = notes;
           console.log(this.mainContainerEl);
         }
         addParagraph() {
@@ -20,6 +21,9 @@
         clearParagraph() {
           const elementToRemove = document.querySelector("#main-container");
           elementToRemove.remove();
+        }
+        getNotes() {
+          return this.notes;
         }
       };
       module.exports = View2;

@@ -18,7 +18,7 @@ describe('Page View', () => {
       
   
         const viewNotes = new ViewNotes();
-        viewNotes.addNote("go swimming")
+        viewNotes.addNoteTest("go swimming")
         expect(viewNotes.notes).toEqual(["go swimming"])
         
     });
@@ -26,8 +26,8 @@ describe('Page View', () => {
       
   
         const viewNotes = new ViewNotes();
-        viewNotes.addNote("go swimming")
-        viewNotes.addNote("its sunny")
+        viewNotes.addNoteTest("go swimming")
+        viewNotes.addNoteTest("its sunny")
         expect(viewNotes.notes).toEqual(["go swimming","its sunny"])
         
     });

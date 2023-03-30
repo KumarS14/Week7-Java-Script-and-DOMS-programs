@@ -9,5 +9,6 @@ class ViewNotes  {
     {
         this.notes.push(note)
     }
+   
 }
 module.exports = ViewNotes

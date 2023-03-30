@@ -7,9 +7,9 @@
   var require_view = __commonJS({
     "view.js"(exports, module) {
       var View2 = class {
-        constructor(notes) {
+        constructor(notes2) {
           this.mainContainerEl = document.querySelector("#main-container");
-          this.notes = notes;
+          this.notes = notes2;
           console.log(this.mainContainerEl);
         }
         addParagraph() {
@@ -22,16 +22,44 @@
           const elementToRemove = document.querySelector("#main-container");
           elementToRemove.remove();
         }
-        getNotes() {
+        getNotesTest() {
           return this.notes;
+        }
+        getNotes() {
+          this.notes.forEach((element) => {
+            const newElement = document.createElement("div");
+            newElement.textContent = element;
+            newElement.className = "note";
+            this.mainContainerEl.append(newElement);
+          });
         }
       };
       module.exports = View2;
     }
   });
 
+  // NotesView.js
+  var require_NotesView = __commonJS({
+    "NotesView.js"(exports, module) {
+      var View2 = require_view();
+      var ViewNotes2 = class {
+        constructor(notes2 = []) {
+          this.notes = notes2;
+        }
+        addNoteTest(note) {
+          this.notes.push(note);
+        }
+      };
+      module.exports = ViewNotes2;
+    }
+  });
+
   // index.js
   var View = require_view();
-  var view = new View();
-  view.addParagraph();
+  var ViewNotes = require_NotesView();
+  var notes = new ViewNotes();
+  notes.addNoteTest("swimming");
+  notes.addNoteTest("jogging");
+  var view = new View(notes.notes);
+  view.getNotes();
 })();

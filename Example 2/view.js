@@ -16,9 +16,19 @@ class View {
     const elementToRemove = document.querySelector('#main-container');
     elementToRemove.remove();
   }
-  getNotes()
+  getNotesTest()
   {
     return this.notes
+  }
+  getNotes()
+  {
+    this.notes.forEach(element => {
+      const newElement = document.createElement('div')
+      newElement.textContent = element;
+      newElement.className = 'note';
+      this.mainContainerEl.append(newElement)
+
+    });
   }
   
 }

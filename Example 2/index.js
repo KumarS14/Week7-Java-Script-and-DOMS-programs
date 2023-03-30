@@ -1,4 +1,8 @@
 const View = require("./view");
+const ViewNotes = require('./NotesView');
 
-const view = new View();
-view.addParagraph()
+const notes = new ViewNotes();
+notes.addNoteTest("swimming");
+notes.addNoteTest("jogging");
+const view = new View(notes.notes);
+view.getNotes();

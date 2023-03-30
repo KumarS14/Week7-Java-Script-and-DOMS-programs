@@ -37,7 +37,28 @@ describe('Page view', () => {
     notes.addNoteTest("swimming")
     const view = new View(notes.notes)
  
-    expect(view.getNotes()).toEqual(["swimming"]);
+    expect(view.getNotesTest()).toEqual(["swimming"]);
+
+
+  });
+  it('should retrive notes from notes class and call them in the view class using getNotes',() => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const notes = new ViewNotes();
+    notes.addNoteTest("swimming")
+    const view = new View(notes.notes)
+    view.getNotes()
+    expect(document.querySelectorAll('div.note').length).toEqual(1)
+
+
+  });
+  it('should retrive notes from notes class and call them in the view class using getNotes',() => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const notes = new ViewNotes();
+    notes.addNoteTest("swimming")
+    notes.addNoteTest("jogging")
+    const view = new View(notes.notes)
+    view.getNotes()
+    expect(document.querySelectorAll('div.note').length).toEqual(2)
 
 
   });

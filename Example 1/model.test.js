@@ -15,9 +15,10 @@ describe('A test for my web page', () => {
 
   it('displays a note', () => {
     // 1. Arrange - instantiate our View class
-    const note = new View();
+   
     document.body.innerHTML = fs.readFileSync('./index.html')
+    const note = new View();
     note.addNote("Sonjay")
-    expect(document.querySelector('#note').innerText).toBe('my note');
+    expect(document.querySelector('#note').textContent).toBe("Sonjay");
   });
 });

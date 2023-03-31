@@ -1,8 +1,9 @@
 class Model {
     constructor(notes = new Array)
     {
+        
         this.notes = notes
-
+        
     }
     addNote(note){
         this.notes.push(note)

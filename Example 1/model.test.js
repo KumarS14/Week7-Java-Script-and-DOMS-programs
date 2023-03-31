@@ -18,6 +18,6 @@ describe('A test for my web page', () => {
     const note = new View();
     document.body.innerHTML = fs.readFileSync('./index.html')
     note.addNote("Sonjay")
-    expect(document.querySelector('#note').textContent).toBe('my note');
+    expect(document.querySelector('#note').innerText).toBe('my note');
   });
 });

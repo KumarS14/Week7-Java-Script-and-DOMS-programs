@@ -1,17 +1,16 @@
 class Model {
-    constructor(notes = new Array)
+    constructor()
     {
-        
-        this.notes = notes
+        this.containerEl = document.querySelector('#main-container')
         
     }
     addNote(note){
-        this.notes.push(note)
+        const newNote = document.createElement('p');
+        newNote.innerText = 'bob';
+        newNote.id = 'note';
+        this.containerEl.append(newNote);
     }
-    getNotes()
-    {
-        return this.notes
-    } 
+   
     reset() 
     {
         this.notes = []

@@ -18,7 +18,9 @@ describe('A test for my web page', () => {
    
     document.body.innerHTML = fs.readFileSync('./index.html')
     const note = new View();
-    note.addNote("Sonjay")
-    expect(document.querySelector('#note').textContent).toBe("Sonjay");
+    const button = document.querySelector('#add-note-button')
+    button.click
+    note.addNote()
+    expect(document.querySelector('#note').textContent).toBe("note");
   });
 });

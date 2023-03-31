@@ -6,8 +6,8 @@ class Model {
     }
     addNote(note){
         const newNote = document.createElement('p');
-        newNote.innerText = 'bob';
-        newNote.id = 'note';
+        newNote.innerText = note;
+        newNote.id = 'note' ;
         this.containerEl.append(newNote);
     }
    
